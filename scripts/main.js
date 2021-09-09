@@ -47,6 +47,7 @@ const planets = [
 //   return acc;
 // }, {});
 const galaxy = {};
+
 planets.forEach((planet) => {
   galaxy[planet.name] = planet.value;
 });
@@ -89,7 +90,15 @@ document.querySelector("button").addEventListener("click", () => {
   const result = (galaxy[planet] * mass).toFixed(2);
 
   planetImage.classList.remove("hide");
-  resultEl.innerHTML = `<p>The weight of the object on <span class="planet-name">${planet}</span></p>
+  resultEl.innerHTML = `<p>The weight of the object on <span class="planet-name">${planet.toUpperCase()}</span></p>
   <span class="weight">${result}</span>`;
   console.log(result);
 });
+
+// 1000
+// 30 => 30 /1000* 100 = 3.0
+// 400 => 400 / 1000 * 100 = 40.0
+
+// <div> // width: 100% position: relative
+//   span // position: absolute with: of percentage
+// </div>
